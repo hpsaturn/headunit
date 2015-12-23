@@ -81,6 +81,9 @@ import android.widget.AdapterView;
 import android.net.wifi.p2p.*;
 //import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.net.wifi.p2p.WifiP2pManager.*;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
+import com.crashlytics.android.ndk.CrashlyticsNdk;
 import java.net.ServerSocket;
 import android.os.AsyncTask;
 import java.io.File;
@@ -323,6 +326,7 @@ Public for hu_tra:
   @Override
   protected void onCreate (Bundle savedInstanceState) {
     super.onCreate (savedInstanceState);
+    Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
 
     Log.d ("hu", "Headunit for Android Auto (tm) - Copyright 2011-2015 Michael A. Reid. All Rights Reserved...");
 
